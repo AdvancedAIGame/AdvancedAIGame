@@ -352,6 +352,8 @@
 "Assets/BrokenVector/LowPolyDungeon/Demo Scenes/MouseCamLook.cs"
 "Assets/BrokenVector/LowPolyDungeon/Demo Scenes/PlayerMovement.cs"
 "Assets/BrokenVector/LowPolyDungeon/Demo Scenes/ScreenshotMaker.cs"
+"Assets/Scripts/EnemyController.cs"
+"Assets/Scripts/FieldOfView.cs"
 -langversion:9.0
 
 /deterministic
