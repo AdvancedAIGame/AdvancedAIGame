@@ -27,8 +27,7 @@ public class FieldOfView : MonoBehaviour
     private IEnumerator FoVRoutine()
     {
         WaitForSeconds wait = new WaitForSeconds(0.2f);
-        GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
-
+        
         while (true)
         {
             yield return wait;

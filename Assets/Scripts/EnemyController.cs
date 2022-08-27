@@ -23,6 +23,17 @@ public class EnemyController : MonoBehaviour
     //player position
     private Vector3 playerPosition;
     private Animator animator;
+    //bool check if player is caught
+    public bool caughtPlayer;
+    //the navmeshagent
+    private NavMeshAgent navMeshAgent;
+    //speed variables
+    public float speedWalk = 3;
+    public float speedRun = 4;
+    //wait time
+    private float waitTime = 4;
+    //original enemy position
+    private Vector3 originalEnemyPos;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +45,13 @@ public class EnemyController : MonoBehaviour
 
         isIdle = true;
         canSeePlayer = false;
+        caughtPlayer = false;
+
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.isStopped = false;
+        navMeshAgent.speed = speedWalk;
+
+        originalEnemyPos = gameObject.transform.position;
     }
 
     // Update is called once per frame
@@ -47,11 +65,11 @@ public class EnemyController : MonoBehaviour
         //check fov
         FieldOfViewCheck();
         if (isIdle)
-            //run patrol
-            IdleAnimation();
+            //run idle
+            Idling();
         else
             //else chase
-            RunAnimation();
+            Running();
     }
 
     private IEnumerator FoVRoutine()
@@ -94,23 +112,53 @@ public class EnemyController : MonoBehaviour
                 }
             }
             if (Vector3.Distance(transform.position, target.position) > fovRadius)
+            { 
                 canSeePlayer = false;
-            //fix this can see player thing
+                isIdle = true;
+            }
         }
     }
 
-    private void IdleAnimation()
+    private void Idling()
     {
-        animator.SetLayerWeight(5, 10f);
+        //animator.SetLayerWeight(5, 1);
+        animator.SetTrigger("Idle");
     }
 
 
-    private void RunAnimation()
+    private void Running()
     {
-        animator.SetLayerWeight(1, 10f);
-    }
+        //if the player hasn't been caught yet
+        if (!caughtPlayer)
+        {
+            navMeshAgent.isStopped = false;
+            navMeshAgent.speed = speedRun;
+            navMeshAgent.SetDestination(playerPosition);
+            animator.SetTrigger("Run");
+        }
 
-    //create idle method (like patrolling) and chasing
-    //isIdle isn't changing
-    //canSeePlayer does nothing either
+        //if the destination has been reached
+        if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
+        {
+            //haven't caught player, can't see player, and wait time is over, back to idle
+            if (waitTime <= 0 && !caughtPlayer && !canSeePlayer)
+            {
+                isIdle = true;
+                navMeshAgent.isStopped = false;
+                navMeshAgent.speed = speedWalk;
+                waitTime = 4;
+                navMeshAgent.SetDestination(originalEnemyPos);
+            }
+            else
+            {
+                //can't see the player so I'll stop and wait for a bit
+                if (!canSeePlayer)
+                {
+                    navMeshAgent.isStopped = true;
+                    navMeshAgent.speed = 0;
+                    waitTime -= Time.deltaTime;
+                }
+            }
+        }
+    }
 }
