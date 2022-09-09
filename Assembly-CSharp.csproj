@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\FieldOfView.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\MouseCamLook.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\tempScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

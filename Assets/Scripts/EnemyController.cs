@@ -39,7 +39,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
 
         StartCoroutine(FoVRoutine());
 
@@ -52,6 +52,12 @@ public class EnemyController : MonoBehaviour
         navMeshAgent.speed = speedWalk;
 
         originalEnemyPos = gameObject.transform.position;
+
+        //varying radius and angles so that the best are chosen for clonal expansion later
+        //randomise fovAngle between 95 and 120
+        fovAngle = Random.Range(95, 120);
+        //randomise radius between 5 and 9
+        fovRadius = Random.Range(5, 9);
     }
 
     // Update is called once per frame
@@ -63,7 +69,7 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         //check fov
-        FieldOfViewCheck();
+        //FieldOfViewCheck();
         if (isIdle)
             //run idle
             Idling();
@@ -122,7 +128,7 @@ public class EnemyController : MonoBehaviour
     private void Idling()
     {
         //animator.SetLayerWeight(5, 1);
-        animator.SetTrigger("Idle");
+        //animator.SetTrigger("Idle");
     }
 
 
@@ -134,7 +140,7 @@ public class EnemyController : MonoBehaviour
             navMeshAgent.isStopped = false;
             navMeshAgent.speed = speedRun;
             navMeshAgent.SetDestination(playerPosition);
-            animator.SetTrigger("Run");
+            //animator.SetTrigger("Run");
         }
 
         //if the destination has been reached

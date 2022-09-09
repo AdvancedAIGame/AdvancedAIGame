@@ -22,6 +22,12 @@ public class FieldOfView : MonoBehaviour
         //get player
         playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FoVRoutine());
+
+        //varying radius and angles so that the best are chosen for clonal expansion later
+        //randomise fovAngle between 95 and 120
+        angle = Random.Range(95, 120);
+        //randomise radius between 5 and 9
+        radius = Random.Range(5, 9);
     }
 
     private IEnumerator FoVRoutine()
