@@ -62,6 +62,8 @@
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\MouseCamLook.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\tempScript.cs" />
+    <Compile Include="Assets\Scripts\PlayerInventory.cs" />
+    <Compile Include="Assets\Scripts\HealthPoints.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
