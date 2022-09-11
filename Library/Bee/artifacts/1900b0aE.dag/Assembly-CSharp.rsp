@@ -354,6 +354,9 @@
 "Assets/BrokenVector/LowPolyDungeon/Demo Scenes/ScreenshotMaker.cs"
 "Assets/Scripts/EnemyController.cs"
 "Assets/Scripts/FieldOfView.cs"
+"Assets/Scripts/HealthPoints.cs"
+"Assets/Scripts/InventoryUI.cs"
+"Assets/Scripts/PlayerInventory.cs"
 "Assets/Scripts/tempScript.cs"
 -langversion:9.0
 
