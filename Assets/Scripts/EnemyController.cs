@@ -59,6 +59,9 @@ public class EnemyController : MonoBehaviour
         fovAngle = Random.Range(95, 120);
         //randomise radius between 5 and 9
         fovRadius = Random.Range(5, 9);
+
+        //tag of the monsters
+        gameObject.tag = "Monsters";
     }
 
     // Update is called once per frame
