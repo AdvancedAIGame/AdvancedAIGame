@@ -14,7 +14,8 @@ public class HealthPoints : MonoBehaviour
         {
             //collect health point on collison and remove object
             playerInventory.HealthCollected();
-            gameObject.SetActive(false); 
+            gameObject.SetActive(false);
+            print("Health Collected");
         }
     }
 }

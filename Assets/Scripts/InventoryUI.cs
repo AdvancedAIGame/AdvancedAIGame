@@ -7,6 +7,7 @@ public class InventoryUI : MonoBehaviour
 {
     // Start is called before the first frame update
     private TextMeshProUGUI health_score;
+    
     void Start()
     {
         health_score = GetComponent<TextMeshProUGUI>();
@@ -16,5 +17,10 @@ public class InventoryUI : MonoBehaviour
     {
         //update game score
         health_score.text = playerInventory.playerHealth.ToString();
+        if(playerInventory.playerHealth <= 20)
+        {
+            health_score.color = Color.red;
+        }
     }
+
 }

@@ -61,7 +61,7 @@ public class EnemyController : MonoBehaviour
         fovRadius = Random.Range(5, 9);
 
         //tag of the monsters
-        gameObject.tag = "Monsters";
+        
     }
 
     // Update is called once per frame
@@ -171,4 +171,6 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
+
+ 
 }

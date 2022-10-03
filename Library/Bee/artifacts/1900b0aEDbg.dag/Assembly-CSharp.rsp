@@ -115,6 +115,8 @@
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
 -define:ENABLE_LEGACY_INPUT_MANAGER
+-define:CROSS_PLATFORM_INPUT
+-define:UNITY_POST_PROCESSING_STACK_V2
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
@@ -323,9 +325,16 @@
 -r:"C:/Users/Samketi.Nkosi/Desktop/School/AI_GAME/AdvancedAIGame/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
 -r:"C:/Users/Samketi.Nkosi/Desktop/School/AI_GAME/AdvancedAIGame/Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll"
 -r:"C:/Users/Samketi.Nkosi/Desktop/School/AI_GAME/AdvancedAIGame/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Assembly-CSharp-firstpass.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.2D.Sprite.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.2D.Tilemap.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.EditorCoroutines.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.PlasticSCM.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Postprocessing.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Postprocessing.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.ProGrids.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.ProGrids.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Rider.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Services.Core.Analytics.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Services.Core.Environments.ref.dll"
@@ -352,11 +361,30 @@
 "Assets/BrokenVector/LowPolyDungeon/Demo Scenes/MouseCamLook.cs"
 "Assets/BrokenVector/LowPolyDungeon/Demo Scenes/PlayerMovement.cs"
 "Assets/BrokenVector/LowPolyDungeon/Demo Scenes/ScreenshotMaker.cs"
+"Assets/EffectExamples/Misc Effects/Scripts/SpawnEffect.cs"
+"Assets/SampleScenes/Menu/Scripts/MenuSceneLoader.cs"
+"Assets/SampleScenes/Menu/Scripts/PauseMenu.cs"
+"Assets/SampleScenes/Menu/Scripts/SceneAndURLLoader.cs"
+"Assets/SampleScenes/Scripts/CameraSwitch.cs"
+"Assets/SampleScenes/Scripts/LevelReset.cs"
+"Assets/SampleScenes/Scripts/ParticleSceneControls.cs"
+"Assets/SampleScenes/Scripts/PlaceTargetWithMouse.cs"
+"Assets/SampleScenes/Scripts/SlowMoButton.cs"
 "Assets/Scripts/EnemyController.cs"
 "Assets/Scripts/FieldOfView.cs"
+"Assets/Scripts/Gun.cs"
 "Assets/Scripts/HealthPoints.cs"
+"Assets/Scripts/InventoryUI.cs"
+"Assets/Scripts/MonsterHealth.cs"
+"Assets/Scripts/MoveBullet.cs"
 "Assets/Scripts/PlayerInventory.cs"
 "Assets/Scripts/tempScript.cs"
+"Assets/Shared/Ramps/Runtime/RampAsset.cs"
+"Assets/Shared/Scripts/AdjustTimeScale.cs"
+"Assets/Shared/Scripts/ProximityActivate.cs"
+"Assets/Shared/Scripts/SimpleCameraController.cs"
+"Assets/Shared/Scripts/SimpleCharacterMotor.cs"
+"Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:9.0
 
 /deterministic

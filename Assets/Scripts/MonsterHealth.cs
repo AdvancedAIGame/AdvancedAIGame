@@ -6,14 +6,19 @@ public class MonsterHealth : MonoBehaviour
 {
     public int currentHealth = 100;
     // Start is called before the first frame update
-    void Start()
+    public void OnTriggerEnter(Collider other)
     {
-
+        if(other.gameObject.tag == "Bullet")
+        {
+            //check for collison with bullet 
+            currentHealth -= 50;
+            print("Bullet Collision");
+            Destroy(other.gameObject);
+        }
     }
-
-    // Update is called once per frame
     void Update()
     {
+        //destroy monster if health is zero
         if (currentHealth <= 0)
         {
             Destroy(this.gameObject);
