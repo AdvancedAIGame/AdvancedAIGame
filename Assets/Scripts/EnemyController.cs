@@ -1,3 +1,4 @@
+using RandomStrings;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,6 +35,7 @@ public class EnemyController : MonoBehaviour
     private float waitTime = 4;
     //original enemy position
     private Vector3 originalEnemyPos;
+    private string signature;
 
     
     // Start is called before the first frame update
@@ -170,6 +172,14 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void clonalExpansion()
+    {
+        Antibody at = new Antibody(12);
+
+        signature = at.generate_string();
+
     }
 
  
