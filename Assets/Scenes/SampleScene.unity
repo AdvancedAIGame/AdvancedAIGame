@@ -2397,7 +2397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395839196}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -2.398647, y: 8.707921, z: -10.21067}
+  m_LocalPosition: {x: -13.148647, y: 8.707921, z: -7.9606714}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3785,7 +3785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607241085}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.2674561, y: 8.707921, z: -9.102217}
+  m_LocalPosition: {x: -4.482544, y: 8.707921, z: -10.102217}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4632,7 +4632,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669039919}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.215807, y: 8.707921, z: -6.745196}
+  m_LocalPosition: {x: 3.465807, y: 8.707921, z: -3.9951956}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11283,6 +11283,8 @@ MonoBehaviour:
   - {fileID: 1119406428}
   - {fileID: 264909966}
   - {fileID: 1930022303}
+  healthS: {fileID: 777635079}
+  Monsters: {fileID: 806482892}
 --- !u!65 &1597299813
 BoxCollider:
   m_ObjectHideFlags: 0

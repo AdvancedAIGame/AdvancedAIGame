@@ -36,6 +36,7 @@ public class EnemyController : MonoBehaviour
     private float waitTime = 4;
     //original enemy position
     private Vector3 originalEnemyPos;
+    private float originalYRotation; 
     public string signature;
     public float affinity;
     public int damage;
@@ -62,6 +63,7 @@ public class EnemyController : MonoBehaviour
         navMeshAgent.speed = speedWalk;
 
         originalEnemyPos = gameObject.transform.position;
+        originalYRotation = gameObject.transform.eulerAngles.y;
 
         //varying radius and angles so that the best are chosen for clonal expansion later
         //randomise fovAngle between 95 and 120
@@ -203,7 +205,9 @@ public class EnemyController : MonoBehaviour
     {
 
         Antibody at = new Antibody(12);
-        affinity = at.ComputeAffinity(signature, PlayerPrefs.GetString("playerSignature"));
+        var playerSig = PlayerPrefs.GetString("playerSignature");
+        var daffinity = at.ComputeAffinity(signature, playerSig);
+        affinity = daffinity;
         tm.text = "Affinity: " + affinity;
 
         float affinty_perc = 100 - (affinity / 12)*100;
@@ -256,7 +260,11 @@ public class EnemyController : MonoBehaviour
         isIdle = true;
         canSeePlayer = false;
         navMeshAgent.enabled = false;
-        transform.position = originalEnemyPos;
+        transform.position = originalEnemyPos;//.position;
+        //transform.rotation = originalEnemyPos.rotation;
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, originalYRotation, transform.eulerAngles.z);
+
+        
         navMeshAgent.enabled = true;
 
         navMeshAgent.isStopped = false;

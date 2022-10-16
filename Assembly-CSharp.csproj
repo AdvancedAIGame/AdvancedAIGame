@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{CDCC87FB-9F47-3614-8E61-BE5947A68DAF}</ProjectGuid>
+    <ProjectGuid>{F4ED7DB7-F3A3-5846-1F00-BC1960980715}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,7 +62,7 @@
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
     <Compile Include="Assets\Shared\Scripts\ProximityActivate.cs" />
     <Compile Include="Assets\Scripts\InventoryUI.cs" />
-    <Compile Include="Assets\EndGame.cs" />
+    <Compile Include="Assets\Scripts\EndGame.cs" />
     <Compile Include="Assets\Scripts\BulletCol.cs" />
     <Compile Include="Assets\Scripts\MonsterHealth.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
@@ -838,7 +838,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{E3D8F22B-7FC3-BA83-7639-F45BADBD144A}</Project>
+      <Project>{D9CE9565-5797-0373-2DF7-53D1D7783EE3}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
