@@ -1076,6 +1076,8 @@ MonoBehaviour:
   caughtPlayer: 0
   speedWalk: 3
   speedRun: 4
+  signature: 
+  affinity: 0
 --- !u!195 &157993868
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2414,6 +2416,8 @@ MonoBehaviour:
   caughtPlayer: 0
   speedWalk: 3
   speedRun: 4
+  signature: 
+  affinity: 0
 --- !u!195 &395839200
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3777,6 +3781,8 @@ MonoBehaviour:
   caughtPlayer: 0
   speedWalk: 3
   speedRun: 4
+  signature: 
+  affinity: 0
 --- !u!195 &607241089
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4619,6 +4625,8 @@ MonoBehaviour:
   caughtPlayer: 0
   speedWalk: 3
   speedRun: 4
+  signature: 
+  affinity: 0
 --- !u!195 &669039923
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5752,6 +5760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 806482893}
+  - component: {fileID: 806482894}
   m_Layer: 0
   m_Name: Monsters
   m_TagString: Untagged
@@ -5779,6 +5788,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &806482894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806482892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656f3e30cd9f6834e9e8e37354e8f438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &807677825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9227,7 +9248,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1355493921
 PrefabInstance:
@@ -10730,7 +10751,7 @@ PrefabInstance:
     - target: {fileID: 8358542452837294461, guid: 9dd8a3227dc0aa84099496d08718ad7b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8358542452837294461, guid: 9dd8a3227dc0aa84099496d08718ad7b,
         type: 3}
@@ -12455,18 +12476,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000002, y: 2, z: 1.0000002}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1837448031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837448022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30878f0f92f80884b8efdc9be7407f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1837448032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12483,6 +12492,18 @@ MonoBehaviour:
   dirt: {fileID: 0}
   blood: {fileID: 0}
   speed: 10000
+--- !u!114 &1837448039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837448022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e944b7509e292d6438e59bdd349c929b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1841684785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13904,6 +13925,8 @@ MonoBehaviour:
   caughtPlayer: 0
   speedWalk: 3
   speedRun: 4
+  signature: 
+  affinity: 0
 --- !u!54 &2018761044
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14779,6 +14802,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 285188459549283427, guid: c056fe4a0dc11384eae5fe82296e94a2,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 3818571658214410195, guid: 4c3bf58ab93434e49a8dabdf8c3420c1,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c056fe4a0dc11384eae5fe82296e94a2, type: 3}
 --- !u!1001 &8304818940652169438

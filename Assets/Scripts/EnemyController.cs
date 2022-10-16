@@ -35,7 +35,8 @@ public class EnemyController : MonoBehaviour
     private float waitTime = 4;
     //original enemy position
     private Vector3 originalEnemyPos;
-    private string signature;
+    public string signature;
+    public float affinity;
 
     
     // Start is called before the first frame update
@@ -58,9 +59,9 @@ public class EnemyController : MonoBehaviour
 
         //varying radius and angles so that the best are chosen for clonal expansion later
         //randomise fovAngle between 95 and 120
-        fovAngle = Random.Range(95, 120);
+        fovAngle = Random.Range(80, 160);
         //randomise radius between 5 and 9
-        fovRadius = Random.Range(5, 9);
+        fovRadius = Random.Range(4, 10);
 
         //tag of the monsters
         
@@ -174,12 +175,48 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void clonalExpansion()
+    public void clonalExpansion()
     {
+
         Antibody at = new Antibody(12);
+        affinity = at.ComputeAffinity(signature, PlayerPrefs.GetString("playerSignature"));
 
-        signature = at.generate_string();
+        float affinty_perc = 100 - (affinity / 12)*100;
 
+        float normalized_aff = affinty_perc / 100;
+
+        fovAngle = (fovAngle * normalized_aff) + fovAngle;
+
+        if(fovAngle > 160)
+        {
+            fovAngle = 160;
+        }
+
+
+        fovRadius = (fovRadius * normalized_aff) + fovRadius;
+
+        if (fovRadius > 10)
+        {
+            fovRadius = 10;
+        }
+
+        int health = gameObject.GetComponent<MonsterHealth>().currentHealth;
+
+        health = (int)((health * normalized_aff) + health);
+
+        if (health > 150)
+        {
+            health = 150;
+        }
+
+        gameObject.GetComponent<MonsterHealth>().currentHealth = health;
+
+        speedRun = ((speedRun * normalized_aff) + speedRun);
+
+        if (speedRun > 6)
+        {
+            speedRun = 6;
+        }
     }
 
  

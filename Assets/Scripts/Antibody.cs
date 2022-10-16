@@ -173,7 +173,7 @@ namespace RandomStrings {
             for(int p = 0;p < pop.Count ;p++){
                 int aff =  ComputeAffinity(pop[p],antigen);
                 List<string> clon = clone(pop[p],aff);
-                pop.AddRange(clon);
+                //pop.AddRange(clon);
             }
 
             for(int p = 0;p < pop.Count ;p++){
