@@ -1,5 +1,7 @@
+using RandomStrings;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -34,6 +36,14 @@ public class EnemyController : MonoBehaviour
     private float waitTime = 4;
     //original enemy position
     private Vector3 originalEnemyPos;
+    public string signature;
+    public float affinity;
+    public int damage;
+
+    public TextMesh tm;
+    GameObject sign;
+
+    private Camera cam;
 
     // Start is called before the first frame update
     void Start()
@@ -55,15 +65,36 @@ public class EnemyController : MonoBehaviour
 
         //varying radius and angles so that the best are chosen for clonal expansion later
         //randomise fovAngle between 95 and 120
-        fovAngle = Random.Range(95, 120);
+        fovAngle = Random.Range(80, 120);
         //randomise radius between 5 and 9
-        fovRadius = Random.Range(5, 9);
+        fovRadius = Random.Range(4, 8);
+
+        //randomise damage output
+        damage = Random.Range(3, 8);
+
+        sign = new GameObject("enemyAffinity");
+        sign.transform.parent = transform;
+        sign.transform.rotation = Camera.main.transform.rotation;
+
+        tm = sign.AddComponent<TextMesh>();
+        tm.text = "Affinity: ";
+        tm.color = new Color(0.8f, 0.8f, 0.8f);
+        tm.fontStyle = FontStyle.Bold;
+        tm.alignment = TextAlignment.Center;
+        tm.anchor = TextAnchor.MiddleCenter;
+        tm.characterSize = 0.065f;
+        tm.fontSize = 60;
+
+        cam = Camera.main;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        sign.transform.position = transform.position + Vector3.up * 3f;
+        sign.transform.rotation = Quaternion.LookRotation(sign.transform.position - cam.transform.position);
+
     }
 
     void FixedUpdate()
@@ -166,5 +197,73 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void clonalExpansion()
+    {
+
+        Antibody at = new Antibody(12);
+        affinity = at.ComputeAffinity(signature, PlayerPrefs.GetString("playerSignature"));
+        tm.text = "Affinity: " + affinity;
+
+        float affinty_perc = 100 - (affinity / 12)*100;
+
+        float normalized_aff = affinty_perc / 100;
+
+        fovAngle = (fovAngle * normalized_aff) + fovAngle;
+
+        if(fovAngle > 160)
+        {
+            fovAngle = 160;
+        }
+
+
+        fovRadius = (fovRadius * normalized_aff) + fovRadius;
+
+        if (fovRadius > 10)
+        {
+            fovRadius = 10;
+        }
+
+        int health = gameObject.GetComponent<MonsterHealth>().maxHealth;
+
+        health = (int)((health * normalized_aff) + health);
+
+        if (health > 150)
+        {
+            health = 150;
+        }
+
+        gameObject.GetComponent<MonsterHealth>().maxHealth = health;
+
+        speedRun = ((speedRun * normalized_aff) + speedRun);
+
+        if (speedRun > 5)
+        {
+            speedRun = 5;
+        }
+
+        damage = (int)((damage * normalized_aff) + damage);
+
+        if (damage > 10)
+        {
+            damage = 10;
+        }
+    }
+
+    public void enemyReset()
+    {
+        isIdle = true;
+        canSeePlayer = false;
+        navMeshAgent.enabled = false;
+        transform.position = originalEnemyPos;
+        navMeshAgent.enabled = true;
+
+        navMeshAgent.isStopped = false;
+        navMeshAgent.speed = speedWalk;
+        waitTime = 4;
+
+        caughtPlayer = false;
+        gameObject.GetComponent<MonsterHealth>().currentHealth = gameObject.GetComponent<MonsterHealth>().maxHealth;
     }
 }
