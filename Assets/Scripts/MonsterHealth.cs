@@ -18,7 +18,7 @@ public class MonsterHealth : MonoBehaviour
         if(other.gameObject.tag == "Bullet")
         {
             //check for collison with bullet 
-            currentHealth -= 50;
+            currentHealth -= 25;
             print("Bullet Collision");
             Destroy(other.gameObject);
         }

@@ -13,7 +13,7 @@ public class Gun : MonoBehaviour
     //disable shooting when there are no bullets
     public bool buttonEnabled;
 
-   
+   private GameObject bullet;
 
 
     private void Update()
@@ -24,7 +24,11 @@ public class Gun : MonoBehaviour
             buttonEnabled = true;
             if(nBullets >= 0 && buttonEnabled == true)
             {
-                var bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+                bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+                bullet.transform.parent = bulletSpawn;
+                bullet.transform.localScale = new Vector3(0.054f, 0.2f, 0.1f);
+                //bullet.transform.eulerAngles = new Vector3(90f, bullet.transform.eulerAngles.y, bullet.transform.eulerAngles.z);
+
                 bullet.GetComponent<Rigidbody>().velocity = bulletSpawn.forward * bulletSpeed;
                 nBullets--;
                 print("Bullets left" + nBullets);
@@ -38,6 +42,7 @@ public class Gun : MonoBehaviour
             }
 
         }
+
     }
 
     /*private void OnTriggerEnter(Collider other)

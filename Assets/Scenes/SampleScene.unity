@@ -15182,14 +15182,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 285188459549283427, guid: c056fe4a0dc11384eae5fe82296e94a2,
         type: 3}
+      propertyPath: nBullets
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 285188459549283427, guid: c056fe4a0dc11384eae5fe82296e94a2,
+        type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 3818571658214410195, guid: 4c3bf58ab93434e49a8dabdf8c3420c1,
+      objectReference: {fileID: 5311880399629964096, guid: 97ee9deccd2aa2c4e9a5974fd329b2cb,
         type: 3}
     - target: {fileID: 285188459772007719, guid: c056fe4a0dc11384eae5fe82296e94a2,
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 285188459772007720, guid: c056fe4a0dc11384eae5fe82296e94a2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 285188459772007720, guid: c056fe4a0dc11384eae5fe82296e94a2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 285188459772007720, guid: c056fe4a0dc11384eae5fe82296e94a2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c056fe4a0dc11384eae5fe82296e94a2, type: 3}
